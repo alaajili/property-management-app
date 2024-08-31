@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import CustomUser
+from django.utils import timezone
 
 class Property(models.Model):
 	PROPERTY_TYPES = (
@@ -32,8 +33,8 @@ class Tenant(models.Model):
 class Payment(models.Model):
 	tenant = models.ForeignKey(Tenant, on_delete=models.CASCADE, related_name='payments')
 	amount = models.DecimalField(max_digits=10, decimal_places=2)
-	date = models.DateField(auto_now_add=True)
+	due_date = models.DateField(default=timezone.now)
 	is_settled = models.BooleanField(default=False)
 
 	def __str__(self):
-		return f"{self.tenant.email} paid {self.amount} on {self.date}"
+		return f"{self.tenant.email} has a payment of {self.amount} due on {self.due_date}"

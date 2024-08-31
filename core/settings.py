@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
 	'drf_yasg',
+	'django_filters',
 	
     # My apps
     'users',
@@ -79,6 +80,8 @@ SWAGGER_SETTINGS = {
     },
     'USE_SESSION_AUTH': False,
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 MIDDLEWARE = [
