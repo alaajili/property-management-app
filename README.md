@@ -35,6 +35,7 @@ python3 manage.py migrate
 
 python3 manage.py runserver
 ```
+
 ## V - Testing Endpoints in Swagger
 Navigate to http://localhost:8000/swagger/ in your web browser. You should see the Swagger UI, which provides an interactive interface for testing your API endpoints.
 
