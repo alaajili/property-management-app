@@ -25,6 +25,8 @@ class PropertyViewSet(ModelViewSet):
 
 	def get_queryset(self):
 		user = self.request.user
+		if user.is_anonymous:
+			return Property.objects.none()
 		return Property.objects.filter(owner=user)
 	
 	def perform_create(self, serializer):
@@ -38,6 +40,8 @@ class TenantViewSet(ModelViewSet):
 
 	def get_queryset(self):
 		user = self.request.user
+		if user.is_anonymous:
+			return Property.objects.none()
 		return Tenant.objects.filter(property__owner=user)
 	
 	def perform_create(self, serializer):
@@ -66,6 +70,8 @@ class PaymentViewSet(ModelViewSet):
 
 	def get_queryset(self):
 		user = self.request.user
+		if user.is_anonymous:
+			return Property.objects.none()
         # Filter payments where the tenant's property is managed by the current user
 		return Payment.objects.filter(tenant__property__owner=user)
 
