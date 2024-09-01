@@ -10,7 +10,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.utils import timezone
 from datetime import timedelta
-from rest_framework.views import APIView
 from rest_framework.decorators import action
 
 
@@ -20,7 +19,7 @@ class PropertyViewSet(ModelViewSet):
 	permission_classes = [IsAuthenticated]
 	filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
 	filterset_class = PropertyFilter
-	ordering_fields = ['rental_cost']
+	ordering_fields = ['rental_cost', 'num_units']
 
 
 	def get_queryset(self):
