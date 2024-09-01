@@ -39,21 +39,21 @@ python3 manage.py runserver
 Navigate to http://localhost:8000/swagger/ in your web browser. You should see the Swagger UI, which provides an interactive interface for testing your API endpoints.
 
 ### step 1: Register a user
-1 - Select POST /api/auth/register/: This endpoint allows you to register a new user.
-2 - Click on "Try it out": This will enable the input fields.
-3 - Input the required data: Provide details like email, username, firstname, lastname, and password.
-4 - Click "Execute": Swagger will make a request to the registration endpoint, and you'll see the response in the "Response" section.
+1. Select POST /api/auth/register/: This endpoint allows you to register a new user.
+2. Click on "Try it out": This will enable the input fields.
+3. Input the required data: Provide details like email, username, firstname, lastname, and password.
+4. Click "Execute": Swagger will make a request to the registration endpoint, and you'll see the response in the "Response" section.
 ### step 2: Log in the User
-1 - Select POST /api/auth/login/: This endpoint allows you to log in and get a JWT token.
-2 - Click on "Try it out".
-3 - Input the credentials: Provide email and password for the user you just registered.
-4 - Click "Execute": Swagger will return a response with the JWT token in the "Response" section.
+1. Select POST /api/auth/login/: This endpoint allows you to log in and get a JWT token.
+2. Click on "Try it out".
+3. Input the credentials: Provide email and password for the user you just registered.
+4. Click "Execute": Swagger will return a response with the JWT token in the "Response" section.
 ### step 3: Authorize with access token
 To make authenticated requests, you'll need to include the JWT access token obtained from the login response in your subsequent requests.
-1 - Copy the JWT Access Token: From the login response, copy the token.
-2 - Authorize: At the top right corner of Swagger UI, click the "Authorize" button.
-3 - Input the Token: In the authorization modal, input the token in the following format: ```Bearer <access_token>```.
-4 - Click "Authorize": Now, all requests made through Swagger will include the token in the Authorization header.
+1. Copy the JWT Access Token: From the login response, copy the token.
+2. Authorize: At the top right corner of Swagger UI, click the "Authorize" button.
+3. Input the Token: In the authorization modal, input the token in the following format: ```Bearer <access_token>```.
+4. Click "Authorize": Now, all requests made through Swagger will include the token in the Authorization header.
 ### final step: test endpints and view the response
 for each of the endpoints:
 - Click on the endpoint you want to test.
