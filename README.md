@@ -63,3 +63,9 @@ for each of the endpoints:
 - Click "Execute" to send the request and view the response.
 
 Finally Swagger will display the request URL, request body, and the response from the server.
+
+## Running tests
+To run the tests, use the following command:
+```
+python3 manage.py test
+```
